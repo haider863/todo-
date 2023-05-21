@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import "./App.css";
 
 function TodoList({ data, removeEvent }) {
   return data.map((name, index) => (
     <li key={index}>
       {name}
-      <button onClick={() => removeEvent(index)}>Delete</button>
+      <button className="button-83" role="button" onClick={() => removeEvent(index)}>Delete</button>
     </li>
   ));
 }
@@ -31,27 +32,29 @@ function MyTodo() {
   function Search() {
     let searchq = inputArr.filter((x) => x.includes(searchInput));
     console.log(">>>", searchq);
-    return searchq;
+    // return setSearchq;
   }
   return (
     <>
       <input
+       className="button-83"
         type="text"
         value={inputEntry}
         onChange={(e) => setinputEntry(e.target.value)}
       />
 
-      <button onClick={handleEvent}>add item</button>
+      <button className="button-83" role="button" onClick={handleEvent}>add item</button>
 
-      <TodoList data={inputArr} removeEvent={removeEvent} />
+      <TodoList  className="button-83"  data={inputArr} removeEvent={removeEvent} />
 
       <input
+       className="button-83"
         type="text"
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
       ></input>
 
-      <button value={searchInput} onClick={Search}>
+      <button className="button-83" role="button" value={searchInput} onClick={Search}>
         s
       </button>
       <p>{searchq}</p>
